@@ -1,1 +1,1 @@
-import './boton.scss';
+import '../assets/css/boton.css';
