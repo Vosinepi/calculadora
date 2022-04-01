@@ -11,7 +11,7 @@ const Boton = (props) => {
       <div
         className={`boton-contenedor ${
           esOperador(props.children) ? "operador" : ''
-        }`.trimEnd()} onClick={() => props.clickHandler(props.children)}>
+        }`.trimEnd()} onClick={() => {props.clickHandler(props.children); props.numero(props.children)}}>
         {props.children}
       </div>
     </>

@@ -2,10 +2,18 @@ import '../assets/scss/pantalla.scss'
 
 import React from 'react'
 
-const Pantalla = ({input}) => {
+const Pantalla = (props) => {
+  
+  const esUnico = (valor) => {
+    return valor === 2;
+  };
+ console.log(esUnico)
+
   return (
-    <div className='pantalla'>{input}</div>
+    <div className={`pantalla ${esUnico(props.pantalla) ? 'unico' : ''
+    }`.trimEnd()}>{props.input}</div>
   )
 }
 
 export default Pantalla
+

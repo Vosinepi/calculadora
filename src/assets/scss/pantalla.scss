@@ -8,7 +8,7 @@
     background-color: $pantalla;
     border-radius: 50px;
     border: 3px solid rgb(67, 92, 21);
-    font-size: 50px;
+    font-size: 45px;
     font-family: 'Roboto', sans-serif;
     color: white;
     justify-content: flex-end;
@@ -17,4 +17,12 @@
     align-items: center;
     user-select: none;
     box-shadow: -1px 4px 1px 1px rgb(37, 51, 12);
+}
+
+.unico {
+    font-size: 20px;
+    display: flex;
+    width: 25px;
+    border-radius: 10px;
+    justify-content: flex-start;
 }
