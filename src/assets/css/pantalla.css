@@ -1,1 +1,17 @@
-/* No CSS */
+.pantalla {
+  display: flex;
+  height: 85px;
+  width: 360px;
+  background-color: #ff4d97;
+  border-radius: 50px;
+  border: 3px solid #435c15;
+  font-size: 50px;
+  font-family: "Roboto", sans-serif;
+  color: white;
+  justify-content: flex-end;
+  padding: 11px;
+  padding-right: 30px;
+  align-items: center;
+  user-select: none;
+  box-shadow: -1px 4px 1px 1px #25330c;
+}

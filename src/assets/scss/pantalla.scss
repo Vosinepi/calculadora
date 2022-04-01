@@ -1,0 +1,20 @@
+@use 'colors' as *;
+
+
+.pantalla {
+    display: flex;
+    height: 85px;
+    width: 360px;
+    background-color: $pantalla;
+    border-radius: 50px;
+    border: 3px solid rgb(67, 92, 21);
+    font-size: 50px;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    justify-content: flex-end;
+    padding: 11px;
+    padding-right: 30px;
+    align-items: center;
+    user-select: none;
+    box-shadow: -1px 4px 1px 1px rgb(37, 51, 12);
+}

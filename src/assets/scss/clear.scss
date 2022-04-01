@@ -1,0 +1,28 @@
+@use "colors" as *;
+
+.clear {
+  display: flex;
+  height: 70px;
+  width: 360px;
+  background-color: $botonOp;
+  border-radius: 50px;
+  border: 2px solid white;
+  font-size: 50px;
+  font-family: "Roboto", sans-serif;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: -1px 2px 1px 1px whitesmoke;
+  &:active {
+    
+    
+    
+    box-shadow: 0px 0px 0px 0px;
+    transform: scale(.96);
+    transition: all 0.3s; 
+  }
+  
+}
+
