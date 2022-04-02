@@ -7,10 +7,14 @@ import { useState } from 'react'
 import { evaluate } from 'mathjs'
 
 function App() {
-  const [input, setInput] = useState('')
-  const [input2, setInput2] = useState('')
+  const [input, setInput] = useState('0')
+  const [input2, setInput2] = useState('0')
   const agregarInput = (val) => {
-    setInput(input + val)
+    if (input === '0') {
+      setInput(val)
+    } else {
+      setInput(input + val)
+    }
   }
   const inputUnico = (val) => {
     setInput2(val)
@@ -30,72 +34,81 @@ function App() {
       </div>
       <div className="contenedor-calculadora">
         <div className="fila">
-          <Pantalla pantalla={1} input={input}></Pantalla>
+          <Pantalla id="display" pantalla={1} input={input}></Pantalla>
           <Pantalla pantalla={2} input={input2}></Pantalla>
         </div>
         <div className="botones">
           <div className="fila">
-            <Boton clickHandler={agregarInput} numero={inputUnico}>
+            <Boton id="seven" clickHandler={agregarInput} numero={inputUnico}>
               7
             </Boton>
-            <Boton clickHandler={agregarInput} numero={inputUnico}>
+            <Boton id="eight" clickHandler={agregarInput} numero={inputUnico}>
               8
             </Boton>
-            <Boton clickHandler={agregarInput} numero={inputUnico}>
+            <Boton id="nine" clickHandler={agregarInput} numero={inputUnico}>
               9
             </Boton>
-            <Boton clickHandler={agregarInput} numero={inputUnico}>
+            <Boton id="add" clickHandler={agregarInput} numero={inputUnico}>
               +
             </Boton>
           </div>
           <div className="fila">
-            <Boton clickHandler={agregarInput} numero={inputUnico}>
+            <Boton id="four" clickHandler={agregarInput} numero={inputUnico}>
               4
             </Boton>
-            <Boton clickHandler={agregarInput} numero={inputUnico}>
+            <Boton id="five" clickHandler={agregarInput} numero={inputUnico}>
               5
             </Boton>
-            <Boton clickHandler={agregarInput} numero={inputUnico}>
+            <Boton id="six" clickHandler={agregarInput} numero={inputUnico}>
               6
             </Boton>
-            <Boton clickHandler={agregarInput} numero={inputUnico}>
+            <Boton
+              id="subtract"
+              clickHandler={agregarInput}
+              numero={inputUnico}
+            >
               -
             </Boton>
           </div>
           <div className="fila">
-            <Boton clickHandler={agregarInput} numero={inputUnico}>
+            <Boton id="one" clickHandler={agregarInput} numero={inputUnico}>
               1
             </Boton>
-            <Boton clickHandler={agregarInput} numero={inputUnico}>
+            <Boton id="two" clickHandler={agregarInput} numero={inputUnico}>
               2
             </Boton>
-            <Boton clickHandler={agregarInput} numero={inputUnico}>
+            <Boton id="three" clickHandler={agregarInput} numero={inputUnico}>
               3
             </Boton>
-            <Boton clickHandler={agregarInput} numero={inputUnico}>
+            <Boton
+              id="multiply"
+              clickHandler={agregarInput}
+              numero={inputUnico}
+            >
               *
             </Boton>
           </div>
           <div className="fila">
-            <Boton clickHandler={operacion} numero={inputUnico}>
+            <Boton id="equals" clickHandler={operacion} numero={inputUnico}>
               =
             </Boton>
-            <Boton clickHandler={agregarInput} numero={inputUnico}>
+            <Boton id="zero" clickHandler={agregarInput} numero={inputUnico}>
               0
             </Boton>
-            <Boton clickHandler={agregarInput} numero={inputUnico}>
+            <Boton id="decimal" clickHandler={agregarInput} numero={inputUnico}>
               .
             </Boton>
-            <Boton clickHandler={agregarInput} numero={inputUnico}>
+            <Boton id="divide" clickHandler={agregarInput} numero={inputUnico}>
               /
             </Boton>
           </div>
         </div>
         <div className="fila">
           <Clear
+            id="clear"
             clickHandler={() => {
-              setInput('')
-              setInput2('')
+              setInput('0')
+              setInput2('0')
             }}
           >
             AC

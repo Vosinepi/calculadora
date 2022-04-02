@@ -10,7 +10,7 @@ const Pantalla = (props) => {
  console.log(esUnico)
 
   return (
-    <div className={`pantalla ${esUnico(props.pantalla) ? 'unico' : ''
+    <div id={props.id} className={`pantalla ${esUnico(props.pantalla) ? 'unico' : ''
     }`.trimEnd()}>{props.input}</div>
   )
 }
