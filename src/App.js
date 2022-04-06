@@ -67,7 +67,9 @@ else {alert("Estas queriendo meter otro operador")}}
     console.log(resultado2 == -1)
 if(resultado2 == -1){
   setInput(input+val)
+
 } else { alert("Ya existe")} 
+
   } else
   { if (input.indexOf(".") != -1){
     alert("Ya existe")
