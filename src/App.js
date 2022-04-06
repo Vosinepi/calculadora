@@ -22,9 +22,12 @@ function App() {
         (val === '*' || val === '/') &&
         (ultimoValor === '/' || ultimoValor === '*')
       ) {
-        alert(
-          'Estas queriendo agregar un doble operador que no esta permitido1'
-        )
+     
+        setInput(input.slice(0,-1) + val)
+       // console.log("Este es el nuevo input con el operador "+ input)
+     //   alert(
+     //     'Estas queriendo agregar un doble operador que no esta permitido1'
+     //   )
       } else if (val === '+' && input.charAt(input.length - 1) === '+') {
         alert(
           'Estas queriendo agregar un doble operador que no esta permitido2'
