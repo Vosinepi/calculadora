@@ -29,9 +29,10 @@ function App() {
      //     'Estas queriendo agregar un doble operador que no esta permitido1'
      //   )
       } else if (val === '+' && input.charAt(input.length - 1) === '+') {
-        alert(
-          'Estas queriendo agregar un doble operador que no esta permitido2'
-        )
+     
+        setInput(input.slice(0,-1) + val)   // alert(
+     //     'Estas queriendo agregar un doble operador que no esta permitido2'
+     //   )
       } else if (val === '+' && input.charAt(input.length - 1) === '-') {
         setInput(input + val)
       } else {
