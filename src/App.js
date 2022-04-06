@@ -9,73 +9,54 @@ import { evaluate } from 'mathjs'
 function App() {
   const [input, setInput] = useState('')
   const [input2, setInput2] = useState('')
- 
+  console.log(input)
+  console.log('este numero' + input.charAt(input.length - 4))
   const agregarInput = (val) => {
-    var ultimoValor = String(input.charAt(input.length -1))
-    if (val === "."){
-    evaluaPuntos(input,val)
-  } else if (val == '%' || val == '/' || val == '*'  && (ultimoValor == '%' || ultimoValor == '/' || ultimoValor == '*' )) {
-    alert("Estas queriendo agregar un doble operador que no esta permitido")
-
-  }else if( val == "+" &&  input.charAt(input.length-1) == "+" ){ alert("Estas queriendo agregar un doble operador que no esta permitido")}
-  else if( val == "+" &&  input.charAt(input.length-1) == "-" ){
-    setInput(input+val)
-  } else {
-    setInput(input+val)
+    var ultimoValor = String(input.charAt(input.length - 1))
+    if (input === '0') {
+      setInput(val)
+    } else {
+      if (val === '.') {
+        evaluaPuntos(input, val)
+      } else if (
+        (val === '*' || val === '/') &&
+        (ultimoValor === '/' || ultimoValor === '*')
+      ) {
+        alert(
+          'Estas queriendo agregar un doble operador que no esta permitido1'
+        )
+      } else if (val === '+' && input.charAt(input.length - 1) === '+') {
+        alert(
+          'Estas queriendo agregar un doble operador que no esta permitido2'
+        )
+      } else if (val === '+' && input.charAt(input.length - 1) === '-') {
+        setInput(input + val)
+      } else {
+        setInput(input + val)
+      }
+    }
   }
-
-
-
-}
-const evaluaOperadores = (input,val) => {
-  
-
-  if(input.charAt(input.length - 1) === '-'){
-    setInput(input + val)
-} else if ( input.charAt(input.length - 1) === "+" && val == "-" )
-{  setInput(input+val) }
-else {alert("Estas queriendo meter otro operador")}}
-  //   console.log(input.charAt(input.length - 1) )
-  //   if (input.charAt(input.length - 1) === '-') {
-  //     setInput(val)
-  //   } else if (val === '.'){
-  //     const calc = [...input]
-  //     console.log(calc)
-  
-  //     let result = calc
-  //     .filter(
-  //       (i, idx) => calc[idx - 1] !== i || calc[idx - 1] !== '.'
-  //     )
-  //     const result2 = result.join('')
-  //     console.log(result2)
-  //     setInput(result2 + val)
-  //   } else {
-  //     setInput (input + val)
-  //   }
-   
-  // }
-
-  const evaluaPuntos = (input,val) => {
+  const evaluaPuntos = (input, val) => {
     console.log(input)
     var lastOperator = input.match(/(\-|\+|\/|\*)(?=[^\-\+\/\*]*$)/g)
-    if (lastOperator != null ){
-    var indexLastOperator = input.lastIndexOf(lastOperator)
-    var resultado = input.slice(indexLastOperator)
-    console.log(resultado)
-    var resultado2 = resultado.indexOf(".")
-    console.log(resultado2)
-    console.log(resultado2 == -1)
-if(resultado2 == -1){
-  setInput(input+val)
-
-} else { alert("Ya existe")} 
-
-  } else
-  { if (input.indexOf(".") != -1){
-    alert("Ya existe")
-  } else {setInput(input+val)}}
-}
-
+    if (lastOperator != null) {
+      var indexLastOperator = input.lastIndexOf(lastOperator)
+      var resultado = input.slice(indexLastOperator)
+      console.log(resultado)
+      var resultado2 = resultado.indexOf('.')
+      console.log(resultado2)
+      console.log(resultado2 == -1)
+      if (resultado2 == -1) {
+        setInput(input + val)
+      } else {
+      }
+    } else {
+      if (input.indexOf('.') != -1) {
+      } else {
+        setInput(input + val)
+      }
+    }
+  }
 
   const inputUnico = (val) => {
     setInput2(val)
@@ -83,7 +64,8 @@ if(resultado2 == -1){
   const operacion = () => {
     if (input) {
       setInput(String(evaluate(input)))
-      console.log(input)   } else {
+      console.log(input)
+    } else {
       alert('Ingrese valor')
     }
   }
