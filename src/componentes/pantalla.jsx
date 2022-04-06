@@ -7,7 +7,7 @@ const Pantalla = (props) => {
   const esUnico = (valor) => {
     return valor === 2;
   };
- console.log(esUnico)
+
 
   return (
     <div id={props.id} className={`pantalla ${esUnico(props.pantalla) ? 'unico' : ''

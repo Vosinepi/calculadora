@@ -12,10 +12,23 @@ function App() {
   const agregarInput = (val) => {
     if (input === '0') {
       setInput(val)
+    } else if (val === '.'){
+      const calc = [...input]
+      console.log(calc)
+  
+      let result = calc
+      .filter(
+        (i, idx) => calc[idx - 1] !== i || calc[idx - 1] !== '.'
+      )
+      const result2 = result.join('')
+      console.log(result2)
+      setInput(result2 + val)
     } else {
-      setInput(input + val)
+      setInput (input + val)
     }
+   
   }
+
   const inputUnico = (val) => {
     setInput2(val)
   }
