@@ -13,6 +13,8 @@ function App() {
   console.log('este numero' + input.charAt(input.length - 4))
   const agregarInput = (val) => {
     var ultimoValor = String(input.charAt(input.length - 1))
+    var ultimoValorMenosDos =  String(input.charAt(input.length - 3))
+    console.log(ultimoValorMenosDos)
     if (input === '0') {
       setInput(val)
     } else {
@@ -35,7 +37,13 @@ function App() {
      //   )
       } else if (val === '+' && input.charAt(input.length - 1) === '-') {
         setInput(input + val)
-      } else {
+      } else if (
+        //"5 * - + 5" 
+        input.charAt(input.length - 2) === '-' && (ultimoValorMenosDos === '*' || ultimoValorMenosDos === '/')      ) {
+           console.log(input.substring(0, 1) +  "" +   input.substring(1 + 1))
+           setInput(input.substring(0, 1) +  "" +   input.substring(2 + 1) + val)
+        
+      }else {
         setInput(input + val)
       }
     }
