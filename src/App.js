@@ -13,7 +13,7 @@ function App() {
   console.log('este numero' + input.charAt(input.length - 4))
   const agregarInput = (val) => {
     var ultimoValor = String(input.charAt(input.length - 1))
-    var ultimoValorMenosDos =  String(input.charAt(input.length - 3))
+    var ultimoValorMenosDos = String(input.charAt(input.length - 3))
     console.log(ultimoValorMenosDos)
     if (input === '0') {
       setInput(val)
@@ -24,26 +24,25 @@ function App() {
         (val === '*' || val === '/') &&
         (ultimoValor === '/' || ultimoValor === '*')
       ) {
-     
-        setInput(input.slice(0,-1) + val)
-       // console.log("Este es el nuevo input con el operador "+ input)
-     //   alert(
-     //     'Estas queriendo agregar un doble operador que no esta permitido1'
-     //   )
+        setInput(input.slice(0, -1) + val)
+        // console.log("Este es el nuevo input con el operador "+ input)
+        //   alert(
+        //     'Estas queriendo agregar un doble operador que no esta permitido1'
+        //   )
       } else if (val === '+' && input.charAt(input.length - 1) === '+') {
-     
-        setInput(input.slice(0,-1) + val)   // alert(
-     //     'Estas queriendo agregar un doble operador que no esta permitido2'
-     //   )
+        setInput(input.slice(0, -1) + val) // alert(
+        //     'Estas queriendo agregar un doble operador que no esta permitido2'
+        //   )
       } else if (val === '+' && input.charAt(input.length - 1) === '-') {
         setInput(input + val)
       } else if (
-        //"5 * - + 5" 
-        input.charAt(input.length - 2) === '-' && (ultimoValorMenosDos === '*' || ultimoValorMenosDos === '/')      ) {
-           console.log(input.substring(0, 1) +  "" +   input.substring(1 + 1))
-           setInput(input.substring(0, 1) +  "" +   input.substring(2 + 1) + val)
-        
-      }else {
+        //"5 * - + 5"
+        input.charAt(input.length - 2) === '-' &&
+        (ultimoValorMenosDos === '*' || ultimoValorMenosDos === '/')
+      ) {
+        console.log(input.substring(0, 1) + '' + input.substring(1 + 1))
+        setInput(input.substring(0, 1) + '' + input.substring(2 + 1) + val)
+      } else {
         setInput(input + val)
       }
     }
@@ -84,9 +83,6 @@ function App() {
 
   return (
     <div className="app">
-      <div className="logo">
-        <img src={freeCodeLogo} className="logo-freecode" alt="Logo Freecode" />
-      </div>
       <div className="contenedor-calculadora">
         <div className="fila">
           <Pantalla id="display" pantalla={1} input={input}></Pantalla>
